@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="container mt-3 p-5 w-50 text-center">
+<h2>Factorial</h2>
+
+    <form method="POST" >
+        {% csrf_token %}
+<input class="form-control"  type="number" name="n1" placeholder="Enter number">
+
+    <button class="btn btn-primary mt-5" type="submit">Submit</button>
+
+    <h3 class="sum mt-5">Factorial is : {{fact}}</h3>
+
+        </form>
+    </div>
+
+{% endblock %}

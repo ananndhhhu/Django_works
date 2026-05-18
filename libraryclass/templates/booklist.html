@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Book List</h1>
+
+<!--{{books}}-->
+
+<!--{% for i in books %}-->
+
+<!--{{i.title}}{{i.author}}{{i.price}}{{i.pages}}{{i.languages}}<br>-->
+<!--<div class="container">-->
+<!--<table class="tabel w-100 mt-5">-->
+<!--    <tr>-->
+<!--        <th>Title</th><th>Author</th><th>Pages</th><th>Price</th><th>Languages</th>-->
+<!--    </tr>-->
+
+<!--    {% for i in books %}-->
+
+<!--    <tr>-->
+<!--        <td>{{i.title}}</td> <td>{{i.author}}</td> <td>{{i.price}}</td> <td>{{i.pages}}</td> <td>{{i.languages}}</td>-->
+<!--    </tr>-->
+
+<!--    {% endfor %}-->
+
+<!--</table>-->
+
+
+    <ol>
+        <li>Book Details</li>
+
+    <ul>
+        <li>Title : {{i.title}} </li>
+        <li>Author : {{i.author}}</li>
+        <li>Price : {{i.price}}</li>
+        <li>Pages : {{i.pages}}</li>
+        <li>Languages : {{i.languages}}</li>
+    </ul>
+
+    </ol>
+
+
+
+<!--</div>-->
+
+<!--{% endfor %}-->
+
+{% endblock %}

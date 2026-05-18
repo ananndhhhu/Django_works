@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% block content%}
+<h1 style="text-align:center;" class="pt-3"> BOOK LIST</h1>
+
+<div class="container w-75">
+<table class="table " style="color:black;">
+
+    <tr>
+        <th>MOVIES</th> <th>TITLE</th><th>AUTHOUR</th><th>PRICE</th><th>PAGES</th><th>LANGUAGES</th>
+    </tr>
+    {% for i in books %}
+    <tr>
+           <td>{% if i.Image %} <img src="{{ i.Image.url}}" height="100px" width="100px"> </td>
+
+           {% else %}
+           <p>No image</p>
+           {% endif %}
+        <td>{{i.title}}</td>
+        <td>{{i.author}}</td>
+        <td>{{i.price}}</td>
+        <td>{{i.pages}}</td>
+        <td>{{i.languages}}</td>
+         <td><a href="{% url 'books:detail' i.id %} " class="btn btn-light">Details</a>  </td>
+        <td><a href="{% url 'books:edit' i.id %}" class="btn btn-light">Edit</a>  </td>
+         <td><a href="{% url 'books:delete' i.id %}" class="btn btn-light">Delete</a>  </td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{% block content%}
+<h1 style="text-align:center;" class="pt-3">Employee List</h1>
+
+<div class="container w-75">
+<table class="table " style="color:black;">
+
+    <tr>
+        <th>Empid</th> <th></th><th>Name</th><th>Deptname</th><th>Salary</th><th>Designation</th>
+    </tr>
+    {% for i in users %}
+    <tr>
+           <td>{% if i.image %} <img src="{{ i.image.url}}" height="100px" width="100px"> </td>
+
+           {% else %}
+
+           {% endif %}
+        <td>{{i.empid}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.deptname}}</td>
+        <td>{{i.salary}}</td>
+        <td>{{i.designation}}</td>
+        <td><a href="{% url 'users:detail' i.id %} " class="btn btn-primary">Details</a></td>
+        <td><a href="{% url 'users:edit' i.id %} " class="btn btn-primary">Edit</a></td>
+        <td><a href="{% url 'users:delete' i.id %} " class="btn btn-primary">Delete</a></td>
+
+
+    </tr>
+
+    {% endfor %}
+</table>
+
+    </div>
+{% endblock %}
